@@ -17,6 +17,8 @@ class AutoEncoder(nn.Module):
 
         # Initialize encoder matrix: maps features to directions in hidden layer (start off with random directions)
         self.W = nn.Parameter(torch.randn(n_features, n_hidden))
+
+        # Bias reduces noise and hallucinations
         self.b = nn.Parameter(torch.zeros(n_features))
 
     # Feed forward pass
